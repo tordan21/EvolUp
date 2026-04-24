@@ -1,22 +1,9 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
   <diagram name="Página-1" id="CJ8R1QepGB5d62IjVE2e">
-    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1410" dy="825" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="SAcEIjRN5QXY643ILlly-2" edge="1" parent="1" source="t1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t7">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="SAcEIjRN5QXY643ILlly-36" connectable="0" parent="SAcEIjRN5QXY643ILlly-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.57" y="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="SAcEIjRN5QXY643ILlly-37" connectable="0" parent="SAcEIjRN5QXY643ILlly-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="N" vertex="1">
-          <mxGeometry relative="1" x="0.58" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="SAcEIjRN5QXY643ILlly-25" edge="1" parent="1" source="t1r1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="t2r1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -204,6 +191,25 @@
           <mxGeometry relative="1" x="0.58" y="1" as="geometry">
             <mxPoint y="1" as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="BeoTpfwDMkTMyuzZ1Z3--1" parent="1" style="text;strokeColor=#cccccc;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontColor=#000000;" value="email" vertex="1">
+          <mxGeometry height="25" width="240" x="60" y="137.5" as="geometry" />
+        </mxCell>
+        <mxCell id="BeoTpfwDMkTMyuzZ1Z3--3" edge="1" parent="1" source="BeoTpfwDMkTMyuzZ1Z3--2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="t7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BeoTpfwDMkTMyuzZ1Z3--4" connectable="0" parent="BeoTpfwDMkTMyuzZ1Z3--3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.6787" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BeoTpfwDMkTMyuzZ1Z3--5" connectable="0" parent="BeoTpfwDMkTMyuzZ1Z3--3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.5803" y="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BeoTpfwDMkTMyuzZ1Z3--2" parent="1" style="text;strokeColor=#cccccc;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontColor=#000000;" value="contrasena" vertex="1">
+          <mxGeometry height="25" width="240" x="60" y="162.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
