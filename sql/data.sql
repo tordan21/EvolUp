@@ -6,13 +6,13 @@ INSERT INTO USUARIO (nombre, email, contrasena) VALUES
 
 INSERT INTO OBJETIVO (nombre, descripcion, fecha_inicio, fecha_objetivo, estado, id_usuario_fk) VALUES
 ('Aprendizaje', 'Ampliar conocimientos y habilidades nuevas', '2026-01-01', '2026-01-21', 'activo', 1),
-('Mejorar salud', 'Cuidar el cuerpo y el bienestar fisico', '2026-01-15', '2026-02-05', 'activo', 1),
-('Cambio de habitos', 'Adoptar una rutina de vida mas equilibrada', '2026-02-01', '2026-02-22', 'activo', 2);
+('Mejorar salud', 'Cuidar el cuerpo y el bienestar físico', '2026-01-15', '2026-02-05', 'activo', 1),
+('Cambio de hábitos', 'Adoptar una rutina de vida más equilibrada', '2026-02-01', '2026-02-22', 'activo', 2);
 
 INSERT INTO HABITO (nombre, frecuencia, id_objetivo_fk) VALUES
 ('Leer 30 minutos', 'diario', 1),
-('Practicar vocabulario en ingles', 'diario', 1),
-('Ver una serie en ingles', 'semanal', 1),
+('Practicar vocabulario en inglés', 'diario', 1),
+('Ver una serie en inglés', 'semanal', 1),
 ('Ir al gimnasio', 'diario', 2),
 ('Beber 2 litros de agua', 'diario', 2),
 ('Meditar 10 minutos', 'diario', 3),
@@ -29,20 +29,20 @@ INSERT INTO REGISTRO (fecha, completado, id_habito_fk) VALUES
 ('2026-02-02', FALSE, 6);
 
 INSERT INTO LOGRO (nombre, descripcion) VALUES
-('Racha de 1 semana', 'Mantuviste un habito durante 7 dias seguidos'),
-('Racha de 2 semanas', 'Mantuviste un habito durante 14 dias seguidos'),
-('Racha de 3 semanas', 'Mantuviste un habito durante 21 dias seguidos'),
-('Racha de 1 mes', 'Mantuviste un habito durante 30 dias seguidos'),
-('Racha de 2 meses', 'Mantuviste un habito durante 2 meses seguidos'),
-('Racha de 3 meses', 'Mantuviste un habito durante 3 meses seguidos'),
-('Racha de 4 meses', 'Mantuviste un habito durante 4 meses seguidos'),
-('Racha de 5 meses', 'Mantuviste un habito durante 5 meses seguidos'),
-('Racha de 6 meses', 'Mantuviste un habito durante 6 meses seguidos'),
+('Racha de 1 semana', 'Mantuviste un hábito durante 7 días seguidos'),
+('Racha de 2 semanas', 'Mantuviste un hábito durante 14 días seguidos'),
+('Racha de 3 semanas', 'Mantuviste un hábito durante 21 días seguidos'),
+('Racha de 1 mes', 'Mantuviste un hábito durante 30 días seguidos'),
+('Racha de 2 meses', 'Mantuviste un hábito durante 2 meses seguidos'),
+('Racha de 3 meses', 'Mantuviste un hábito durante 3 meses seguidos'),
+('Racha de 4 meses', 'Mantuviste un hábito durante 4 meses seguidos'),
+('Racha de 5 meses', 'Mantuviste un hábito durante 5 meses seguidos'),
+('Racha de 6 meses', 'Mantuviste un hábito durante 6 meses seguidos'),
 ('Objetivo completado', 'Completaste uno de tus objetivos');
 
 INSERT INTO CATEGORIA (nombre) VALUES
 ('Salud'),
-('Educacion'),
+('Educación'),
 ('Deporte'),
 ('Bienestar'),
 ('Idiomas');
