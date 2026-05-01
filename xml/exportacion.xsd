@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Tipos simples -->
+
+  <xs:simpleType name="tipoNombre">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Patrón mínimo: algo@algo.algo -->
+  <xs:simpleType name="tipoEmail">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@]+@[^\.]+\..+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoEstado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="activo"/>
+      <xs:enumeration value="completado"/>
+      <xs:enumeration value="cancelado"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoFrecuencia">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="diario"/>
+      <xs:enumeration value="semanal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Tipos complejos -->
+
+  <xs:complexType name="tipoRegistro">
+    <xs:attribute name="fecha" type="xs:date" use="required"/>
+    <xs:attribute name="completado" type="xs:boolean" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="tipoRegistros">
+    <xs:sequence>
+      <xs:element name="registro" type="tipoRegistro" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoHabito">
+    <xs:sequence>
+      <xs:element name="nombre" type="tipoNombre"/>
+      <xs:element name="frecuencia" type="tipoFrecuencia"/>
+      <xs:element name="registros" type="tipoRegistros"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <!-- Un objetivo tiene al menos 1 hábito -->
+  <xs:complexType name="tipoHabitos">
+    <xs:sequence>
+      <xs:element name="habito" type="tipoHabito" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoObjetivo">
+    <xs:sequence>
+      <xs:element name="nombre" type="tipoNombre"/>
+      <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+      <xs:element name="fechaInicio" type="xs:date"/>
+      <xs:element name="fechaObjetivo" type="xs:date"/>
+      <xs:element name="estado" type="tipoEstado"/>
+      <xs:element name="habitos" type="tipoHabitos"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="tipoObjetivos">
+    <xs:sequence>
+      <xs:element name="objetivo" type="tipoObjetivo" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoLogro">
+    <xs:sequence>
+      <xs:element name="nombre" type="tipoNombre"/>
+      <xs:element name="descripcion" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="fechaObtenido" type="xs:date" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="tipoLogros">
+    <xs:sequence>
+      <xs:element name="logro" type="tipoLogro" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoUsuario">
+    <xs:sequence>
+      <xs:element name="nombre" type="tipoNombre"/>
+      <xs:element name="email" type="tipoEmail"/>
+      <xs:element name="objetivos" type="tipoObjetivos"/>
+      <xs:element name="logros" type="tipoLogros"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <!-- Al menos 1 usuario en la exportación -->
+  <xs:complexType name="tipoUsuarios">
+    <xs:sequence>
+      <xs:element name="usuario" type="tipoUsuario" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoExportacion">
+    <xs:sequence>
+      <xs:element name="usuarios" type="tipoUsuarios"/>
+    </xs:sequence>
+    <xs:attribute name="fecha" type="xs:date" use="required"/>
+  </xs:complexType>
+
+  <xs:element name="evolup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="exportacion" type="tipoExportacion"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

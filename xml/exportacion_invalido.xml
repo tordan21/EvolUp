@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML con errores para probar la validación del XSD:
+     - email sin @
+     - estado con valor no permitido
+     - frecuencia con valor no permitido -->
+<evolup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="exportacion.xsd">
+
+  <exportacion fecha="2026-04-27">
+    <usuarios>
+
+      <usuario id="1">
+        <nombre>Manuel</nombre>
+        <email>manuelgmail.com</email>
+        <objetivos>
+
+          <objetivo id="1">
+            <nombre>Cambio de hábitos</nombre>
+            <fechaInicio>2026-02-01</fechaInicio>
+            <fechaObjetivo>2026-02-22</fechaObjetivo>
+            <estado>pausado</estado>
+            <habitos>
+              <habito id="1">
+                <nombre>Meditar 10 minutos</nombre>
+                <frecuencia>mensual</frecuencia>
+                <registros/>
+              </habito>
+            </habitos>
+          </objetivo>
+
+        </objetivos>
+        <logros/>
+      </usuario>
+
+    </usuarios>
+  </exportacion>
+
+</evolup>

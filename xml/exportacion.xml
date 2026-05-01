@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evolup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="exportacion.xsd">
+
+  <exportacion fecha="2026-04-27">
+    <usuarios>
+
+      <usuario id="1">
+        <nombre>Víctor</nombre>
+        <email>victor@gmail.com</email>
+        <objetivos>
+
+          <objetivo id="1">
+            <nombre>Aprendizaje</nombre>
+            <descripcion>Ampliar conocimientos y habilidades nuevas</descripcion>
+            <fechaInicio>2026-01-01</fechaInicio>
+            <fechaObjetivo>2026-01-21</fechaObjetivo>
+            <estado>activo</estado>
+            <habitos>
+              <habito id="1">
+                <nombre>Leer 30 minutos</nombre>
+                <frecuencia>diario</frecuencia>
+                <registros>
+                  <registro fecha="2026-01-01" completado="true"/>
+                  <registro fecha="2026-01-02" completado="true"/>
+                  <registro fecha="2026-01-03" completado="false"/>
+                </registros>
+              </habito>
+              <habito id="2">
+                <nombre>Practicar vocabulario en inglés</nombre>
+                <frecuencia>diario</frecuencia>
+                <registros/>
+              </habito>
+              <habito id="3">
+                <nombre>Ver una serie en inglés</nombre>
+                <frecuencia>semanal</frecuencia>
+                <registros/>
+              </habito>
+            </habitos>
+          </objetivo>
+
+          <objetivo id="2">
+            <nombre>Mejorar salud</nombre>
+            <descripcion>Cuidar el cuerpo y el bienestar físico</descripcion>
+            <fechaInicio>2026-01-15</fechaInicio>
+            <fechaObjetivo>2026-02-05</fechaObjetivo>
+            <estado>activo</estado>
+            <habitos>
+              <habito id="4">
+                <nombre>Ir al gimnasio</nombre>
+                <frecuencia>diario</frecuencia>
+                <registros>
+                  <registro fecha="2026-01-15" completado="true"/>
+                  <registro fecha="2026-01-16" completado="true"/>
+                  <registro fecha="2026-01-17" completado="true"/>
+                </registros>
+              </habito>
+              <habito id="5">
+                <nombre>Beber 2 litros de agua</nombre>
+                <frecuencia>diario</frecuencia>
+                <registros/>
+              </habito>
+            </habitos>
+          </objetivo>
+
+        </objetivos>
+        <logros>
+          <logro id="1" fechaObtenido="2026-01-07">
+            <nombre>Racha de 1 semana</nombre>
+            <descripcion>Mantuviste un hábito durante 7 días seguidos</descripcion>
+          </logro>
+          <logro id="2" fechaObtenido="2026-01-14">
+            <nombre>Racha de 2 semanas</nombre>
+            <descripcion>Mantuviste un hábito durante 14 días seguidos</descripcion>
+          </logro>
+          <logro id="10" fechaObtenido="2026-03-01">
+            <nombre>Objetivo completado</nombre>
+            <descripcion>Completaste uno de tus objetivos</descripcion>
+          </logro>
+        </logros>
+      </usuario>
+
+      <usuario id="2">
+        <nombre>Manuel</nombre>
+        <email>manuel@gmail.com</email>
+        <objetivos>
+
+          <objetivo id="3">
+            <nombre>Cambio de hábitos</nombre>
+            <descripcion>Adoptar una rutina de vida más equilibrada</descripcion>
+            <fechaInicio>2026-02-01</fechaInicio>
+            <fechaObjetivo>2026-02-22</fechaObjetivo>
+            <estado>activo</estado>
+            <habitos>
+              <habito id="6">
+                <nombre>Meditar 10 minutos</nombre>
+                <frecuencia>diario</frecuencia>
+                <registros>
+                  <registro fecha="2026-02-01" completado="true"/>
+                  <registro fecha="2026-02-02" completado="false"/>
+                </registros>
+              </habito>
+              <habito id="7">
+                <nombre>Dormir 8 horas</nombre>
+                <frecuencia>diario</frecuencia>
+                <registros/>
+              </habito>
+            </habitos>
+          </objetivo>
+
+        </objetivos>
+        <logros>
+          <logro id="1" fechaObtenido="2026-02-07">
+            <nombre>Racha de 1 semana</nombre>
+            <descripcion>Mantuviste un hábito durante 7 días seguidos</descripcion>
+          </logro>
+          <logro id="2" fechaObtenido="2026-02-14">
+            <nombre>Racha de 2 semanas</nombre>
+            <descripcion>Mantuviste un hábito durante 14 días seguidos</descripcion>
+          </logro>
+        </logros>
+      </usuario>
+
+    </usuarios>
+  </exportacion>
+
+</evolup>
