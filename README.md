@@ -26,10 +26,45 @@ A partir de esos datos, la aplicación muestra información útil como la racha,
 
 ## Tecnologías utilizadas
 
-- Java
-- MySQL
-- JDBC
+- Java 17+
+- MySQL 8.0
+- JDBC (mysql-connector-j 9.3.0)
+- Maven
 - XML / XSD
+
+---
+
+## Instalación y ejecución
+
+**Requisitos previos:**
+- JDK 17 o superior
+- MySQL 8.0 o superior
+- Maven
+
+**Pasos:**
+
+1. Clona el repositorio:
+   ```
+   git clone https://github.com/tordan21/EvolUp.git
+   ```
+
+2. Crea la base de datos ejecutando en MySQL Workbench:
+   ```
+   source sql/schema.sql
+   source sql/data.sql
+   ```
+
+3. Abre el proyecto en IntelliJ IDEA y deja que Maven descargue las dependencias.
+
+4. Ejecuta la clase `Main.java` desde `src/main/java/com/evolup/`.
+
+**Credenciales por defecto:** `localhost:3306`, usuario `root`, contraseña `mysql123`.
+
+---
+
+## Vista previa
+
+![Menú de la aplicación](docs/demo.png)
 
 ---
 
@@ -113,7 +148,48 @@ El archivo `sql/queries.sql` contiene diez consultas que cubren los casos de uso
 
 La aplicación accede a la base de datos mediante JDBC. La clase `DBConnection` gestiona la conexión como singleton. Cada entidad tiene su propio DAO con consultas preparadas (`PreparedStatement`) que evitan inyección SQL.
 
-El menú de consola en `Main.java` permite probar las consultas principales directamente desde la aplicación.
+El menú de consola en `Main.java` permite consultar datos y realizar operaciones de inserción, modificación y borrado directamente desde la aplicación.
+
+---
+
+## Exportación XML
+
+La carpeta `xml/` contiene una exportación de los datos de la aplicación en formato XML.
+
+- **`exportacion.xml`** — representa los usuarios registrados con sus objetivos, hábitos, registros de cumplimiento y logros obtenidos. Los datos son coherentes con los de la base de datos.
+- **`exportacion.xsd`** — esquema que valida la estructura del XML. Define tipos, restricciones (patrón de email, enumeraciones de estado y frecuencia, longitudes) y cardinalidades (un usuario tiene mínimo 0 objetivos, un objetivo mínimo 1 hábito).
+- **`exportacion_invalido.xml`** — ejemplo de XML con errores deliberados (email sin @, estado no permitido, frecuencia no permitida) para demostrar que el XSD los detecta.
+
+La validación se realizó con IntelliJ IDEA. Las evidencias están en `docs/validacion.png` y `docs/validacion_error.png`.
+
+El XML sirve como exportación de datos de la aplicación, de forma que la información queda en un formato legible fuera del programa.
+
+---
+
+## Arquitectura del proyecto
+
+El código se organiza en cuatro capas con responsabilidades separadas:
+
+- **`model/`** — clases de datos (Usuario, Objetivo, Hábito, Registro, Logro) con atributos privados, constructores y getters/setters
+- **`dao/`** — acceso a la base de datos mediante PreparedStatement; cada entidad tiene su propio DAO
+- **`database/`** — DBConnection gestiona la conexión como singleton
+- **`util/`** — utilidades reutilizables; actualmente contiene la clase Validador
+- **`Main`** — menú de consola que coordina la interacción con el usuario
+
+Así cada parte tiene una función clara y no se mezclan responsabilidades.
+
+---
+
+## MPO — Ampliación de Programación
+
+La mejora estructural incorporada para este módulo es un **sistema de validación de entradas** mediante la clase `util/Validador.java`.
+
+Antes de insertar datos, el menú valida:
+- Que los IDs introducidos sean números positivos (`Validador.idValido`)
+- Que los nombres no estén vacíos (`Validador.nombreValido`)
+- Que las fechas tengan el formato correcto AAAA-MM-DD (`Validador.parsearFecha`)
+
+La lógica de validación queda en un sólo lugar y se reutiliza en varias opciones del menú, en lugar de duplicar bloques try/catch en cada método.
 
 ---
 
